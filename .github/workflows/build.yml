@@ -14,4 +14,4 @@ jobs:
         apt install --yes autoconf automake libtool
         bash build.sh
     - run: |
-        node -e "require('./dist/magic-js').then((binding) => binding.MagicBinding.init('./dist/magic.mgc', 0));"
+        node -e "require('./dist/magic-js').MagicBinding.init('./dist/magic.mgc', 0);"
