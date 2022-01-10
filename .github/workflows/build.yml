@@ -5,10 +5,11 @@ jobs:
     container: emscripten/emsdk:3.1.0
     steps:
     - uses: actions/checkout@v2
-    - run: apt update && apt install --yes autoconf automake libtool
-    - run: npm install
     - uses: actions/checkout@v2
       with:
         repository: file/file
         path: node_modules/c-libmagic
-    - run: bash build.sh
+    - run: |
+        apt update
+        apt install --yes autoconf automake libtool
+        bash build.sh
